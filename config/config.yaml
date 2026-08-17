@@ -1,0 +1,19 @@
+project:
+  name: CardioVision-AI
+  version: 0.1.0
+  environment: development
+
+data:
+  raw_dir: data/raw/ptbxl
+  interim_dir: data/interim
+  processed_dir: data/processed
+
+image:
+  target_size: 224
+  channels: 3
+
+model:
+  task: binary_classification
+  classes:
+    - non_mi
+    - mi
