@@ -1,0 +1,28 @@
+training:
+  epochs: 30
+  batch_size: 32
+  learning_rate: 0.0001
+  seed: 42
+
+callbacks:
+  early_stopping:
+    monitor: val_auc
+    patience: 7
+    mode: max
+    restore_best_weights: true
+
+  model_checkpoint:
+    monitor: val_auc
+    mode: max
+    save_best_only: true
+
+  reduce_lr:
+    monitor: val_auc
+    factor: 0.5
+    patience: 3
+    min_lr: 0.000001
+
+model:
+  input_height: 224
+  input_width: 224
+  channels: 3
